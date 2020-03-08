@@ -1,0 +1,11 @@
+# Node modules
+node_modules
+
+# Ignoring everything inside storage directory
+storage/*
+
+# Keeping storage directory
+!storage/.gitkeep
+
+# Environment files should be seperate for each environment
+nodemon.json
