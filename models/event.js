@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const eventSchema = new Schema({
   title: {
@@ -9,20 +9,20 @@ const eventSchema = new Schema({
   },
   description: {
     type: String,
-    require: true
+    require: true,
   },
   price: {
     type: Number,
-    require: true
+    require: true,
   },
   date: {
     type: Date,
-    require: true
+    require: true,
   },
   creator: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
-  }
+    ref: 'User',
+  },
 });
 
 module.exports = mongoose.model('Event', eventSchema);

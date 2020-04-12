@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use('/graphql', graphqlHttp({
   schema: graphQlSchema,
   rootValue: graphQlResolvers,
-  graphiql: true
+  graphiql: true,
 }));
 
 mongoose
@@ -21,10 +21,12 @@ mongoose
     `mongodb+srv://${process.env.MONGO_USER}:${
       process.env.MONGO_PASSWORD
     }@cluster0-uvnvq.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`,
-    {useNewUrlParser: true,
-      useUnifiedTopology: true}
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
   ).then(() => {
-  app.listen(3000);
-}).catch(err => {
-  console.error(err);
-});
+    app.listen(3000);
+  }).catch((err) => {
+    console.error(err);
+  });
